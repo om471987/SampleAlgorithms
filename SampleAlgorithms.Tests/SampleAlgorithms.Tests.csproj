@@ -5,7 +5,7 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{66EEDB8F-9174-4836-8521-42E45669333C}</ProjectGuid>
-    <OutputType>Exe</OutputType>
+    <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>SampleAlgorithms.Tests</RootNamespace>
     <AssemblyName>SampleAlgorithms.Tests</AssemblyName>
@@ -31,7 +31,13 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
   <ItemGroup>
+    <Reference Include="nunit.framework">
+      <HintPath>..\packages\NUnit.2.6.2\lib\nunit.framework.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -41,10 +47,25 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ArrayTests.cs" />
+    <Compile Include="BinaryTreeTests.cs" />
+    <Compile Include="GraphTests.cs" />
+    <Compile Include="HashTableTests.cs" />
+    <Compile Include="LinkedListTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QueueTests.cs" />
+    <Compile Include="StackTests.cs" />
+    <Compile Include="StringTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SampleAlgorithms\SampleAlgorithms.csproj">
+      <Project>{befb01ce-8157-4c77-9192-57ead68f9e0d}</Project>
+      <Name>SampleAlgorithms</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
